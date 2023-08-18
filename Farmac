@@ -1,0 +1,185 @@
+class Clientes:
+    def __init__(self, cpf, nome, data_nascimento):
+        self.cpf = cpf
+        self.nome = nome
+        self.data_nascimento = data_nascimento
+
+class MedicamentosQuimioterapicos:
+    def __init__(self, nome, principal_composto, laboratorio, descricao, necessita_receita):
+        self.nome = nome
+        self.principal_composto = principal_composto
+        self.laboratorio = laboratorio
+        self.descricao = descricao
+        self.necessita_receita = necessita_receita
+
+class MedicamentosFitoterapicos:
+    def __init__(self, nome, principal_composto, laboratorio, descricao):
+        self.nome = nome
+        self.principal_composto = principal_composto
+        self.laboratorio = laboratorio
+        self.descricao = descricao
+
+class Laboratorio:
+    def __init__(self, nome, endereco, telefone, cidade, estado):
+        self.nome = nome
+        self.endereco = endereco
+        self.telefone = telefone
+        self.cidade = cidade
+        self.estado = estado
+
+class Vendas:
+    def __init__(self, data_hora, produtos_vendidos, cliente, valor_total):
+        self.data_hora = data_hora
+        self.produtos_vendidos = produtos_vendidos
+        self.cliente = cliente
+        self.valor_total = valor_total
+
+lista_clientes = []
+lista_medicamentos_quimio = []
+lista_medicamentos_fitoterapicos = []
+lista_vendas = []
+
+def cadastrar_cliente(cpf, nome, data_nascimento):
+    cliente = Clientes(cpf, nome, data_nascimento)
+    lista_clientes.append(cliente)
+    print("Cliente cadastrado com sucesso.")
+
+def cadastrar_medicamento_quimioterapico(nome, principal_composto, laboratorio, descricao, necessita_receita):
+    medicamento = MedicamentosQuimioterapicos(nome, principal_composto, laboratorio, descricao, necessita_receita)
+    lista_medicamentos_quimio.append(medicamento)
+    print("Medicamento quimioterápico cadastrado com sucesso.")
+
+def cadastrar_medicamento_fitoterapico(nome, principal_composto, laboratorio, descricao):
+    medicamento = MedicamentosFitoterapicos(nome, principal_composto, laboratorio, descricao)
+    lista_medicamentos_fitoterapicos.append(medicamento)
+    print("Medicamento fitoterápico cadastrado com sucesso.")
+
+def efetuar_venda(data_hora, produtos_vendidos, cliente):
+    valor_total = calcular_valor_total(produtos_vendidos, cliente)
+    venda = Vendas(data_hora, produtos_vendidos, cliente, valor_total)
+    lista_vendas.append(venda)
+    print("Venda realizada com sucesso.")
+
+def calcular_valor_total(produtos_vendidos, cliente):
+    valor_total = sum(produto.preco for produto in produtos_vendidos)
+    if cliente_idoso(cliente) or valor_total > 150:
+        if cliente_idoso(cliente):
+            valor_total *= 0.8  # Desconto de 20% para idosos
+        else:
+            valor_total *= 0.9  # Desconto de 10% para compras acima de R$150
+    return valor_total
+
+def cliente_idoso(cliente):
+    from datetime import datetime
+    data_atual = datetime.now()
+    data_nascimento = datetime.strptime(cliente.data_nascimento, "%d/%m/%Y")
+    idade = data_atual.year - data_nascimento.year - ((data_atual.month, data_atual.day) < (data_nascimento.month, data_nascimento.day))
+    return idade > 65
+
+def gerar_relatorio_listagem_clientes():
+    lista_clientes_ordenada = sorted(lista_clientes, key=lambda cliente: cliente.nome)
+    for cliente in lista_clientes_ordenada:
+        print(f"CPF: {cliente.cpf} | Nome: {cliente.nome} | Data de Nascimento: {cliente.data_nascimento}")
+
+def gerar_relatorio_listagem_medicamentos():
+    medicamentos_ordenados = sorted(lista_medicamentos_quimio + lista_medicamentos_fitoterapicos, key=lambda med: med.nome)
+    for medicamento in medicamentos_ordenados:
+        print(f"Nome: {medicamento.nome} | Laboratório: {medicamento.laboratorio.nome}")
+
+def gerar_relatorio_listagem_medicamentos_quimioterapicos():
+    for medicamento in lista_medicamentos_quimio:
+        print(f"Nome: {medicamento.nome} | Laboratório: {medicamento.laboratorio.nome}")
+
+def gerar_relatorio_listagem_medicamentos_fitoterapicos():
+    for medicamento in lista_medicamentos_fitoterapicos:
+        print(f"Nome: {medicamento.nome} | Laboratório: {medicamento.laboratorio.nome}")
+
+def gerar_relatorio_estatisticas():
+    total_vendas = len(lista_vendas)
+    total_pessoas_atendidas = len(set(venda.cliente for venda in lista_vendas))
+    total_receita = sum(venda.valor_total for venda in lista_vendas)
+    remedio_mais_vendido = obter_remedio_mais_vendido()
+
+    print("Estatísticas:")
+    print(f"Total de vendas: {total_vendas}")
+    print(f"Total de pessoas atendidas: {total_pessoas_atendidas}")
+    print(f"Total de receita: R$ {total_receita:.2f}")
+    if remedio_mais_vendido:
+        print(f"Remédio mais vendido: {remedio_mais_vendido.nome}")
+
+def obter_remedio_mais_vendido():
+    if not lista_vendas:
+        return None
+
+    medicamentos_vendidos = {}
+    for venda in lista_vendas:
+        for produto in venda.produtos_vendidos:
+            if produto in medicamentos_vendidos:
+                medicamentos_vendidos[produto] += 1
+            else:
+                medicamentos_vendidos[produto] = 1
+
+    remedio_mais_vendido = max(medicamentos_vendidos, key=medicamentos_vendidos.get)
+    return remedio_mais_vendido
+
+while True:
+    print("Menu:")
+    print("1. Cadastrar Cliente")
+    print("2. Cadastrar Medicamento Quimioterápico")
+    print("3. Cadastrar Medicamento Fitoterápico")
+    print("4. Efetuar Venda")
+    print("5. Gerar Relatório de Listagem de Clientes")
+    print("6. Gerar Relatório de Listagem de Medicamentos")
+    print("7. Gerar Relatório de Listagem de Medicamentos Quimioterápicos")
+    print("8. Gerar Relatório de Listagem de Medicamentos Fitoterápicos")
+    print("9. Gerar Relatório de Estatísticas")
+    print("0. Sair")
+
+    opcao = input("Digite a opção desejada: ")
+
+    if opcao == "1":
+        cpf = input("CPF do cliente: ")
+        nome = input("Nome do cliente: ")
+        data_nascimento = input("Data de nascimento (DD/MM/AAAA): ")
+        cadastrar_cliente(cpf, nome, data_nascimento)
+    elif opcao == "2":
+        nome = input("Nome do medicamento quimioterápico: ")
+        principal_composto = input("Principal composto: ")
+        laboratorio = input("Laboratório: ")
+        descricao = input("Descrição: ")
+        necessita_receita = input("Necessita receita? (S/N): ").upper() == "S"
+        cadastrar_medicamento_quimioterapico(nome, principal_composto, laboratorio, descricao, necessita_receita)
+    elif opcao == "3":
+        nome = input("Nome do medicamento fitoterápico: ")
+        principal_composto = input("Principal composto: ")
+        laboratorio = input("Laboratório: ")
+        descricao = input("Descrição: ")
+        cadastrar_medicamento_fitoterapico(nome, principal_composto, laboratorio, descricao)
+    elif opcao == "4":
+        data_hora = input("Data e hora da venda (DD/MM/AAAA HH:MM): ")
+        # Coletar produtos vendidos e cliente
+        produtos_vendidos = []  # Preencha com os produtos vendidos
+        cpf_cliente = input("CPF do cliente: ")
+        cliente = None
+        for c in lista_clientes:
+            if c.cpf == cpf_cliente:
+                cliente = c
+                break
+        if cliente is None:
+            print("Cliente não encontrado.")
+        else:
+            efetuar_venda(data_hora, produtos_vendidos, cliente)
+    elif opcao == "5":
+        gerar_relatorio_listagem_clientes()
+    elif opcao == "6":
+        gerar_relatorio_listagem_medicamentos()
+    elif opcao == "7":
+        gerar_relatorio_listagem_medicamentos_quimioterapicos()
+    elif opcao == "8":
+        gerar_relatorio_listagem_medicamentos_fitoterapicos()
+    elif opcao == "9":
+        gerar_relatorio_estatisticas()
+    elif opcao == "0":
+        break
+    else:
+        print("Opção inválida. Por favor, escolha uma opção válida.")
