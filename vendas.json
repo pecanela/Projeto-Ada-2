@@ -39,5 +39,160 @@
             "data_nascimento": "15/03/1985"
         },
         "valor_total": 1990.1700000000003
+    },
+    {
+        "data_hora": "03042023",
+        "produtos_vendidos": [
+            {
+                "nome": "Cytovin",
+                "principal_composto": "Fluorouracil",
+                "laboratorio": "MediPharm",
+                "descricao": "Tratamento de c\u00c3\u00a2ncer de c\u00c3\u00b3lon",
+                "necessita_receita": true,
+                "valor_medicamento": 1200.0
+            },
+            {
+                "nome": "Oncotrex",
+                "principal_composto": "Methotrexate",
+                "laboratorio": "BioCure",
+                "descricao": "Tratamento de leucemia",
+                "necessita_receita": true,
+                "valor_medicamento": 850.0
+            },
+            {
+                "nome": "Platinox",
+                "principal_composto": "Cisplatin",
+                "laboratorio": "PharmaLife",
+                "descricao": "Tratamento de c\u00c3\u00a2ncer de pulm\u00c3\u00a3o",
+                "necessita_receita": true,
+                "valor_medicamento": 1800.0
+            },
+            {
+                "nome": "VincaTreat",
+                "principal_composto": "Vincristine",
+                "laboratorio": "MediPharm",
+                "descricao": "Tratamento de linfoma",
+                "necessita_receita": true,
+                "valor_medicamento": 1300.0
+            },
+            {
+                "nome": "CarboCell",
+                "principal_composto": "Carboplatin",
+                "laboratorio": "PharmaGen",
+                "descricao": "Tratamento de c\u00c3\u00a2ncer de ov\u00c3\u00a1rio",
+                "necessita_receita": true,
+                "valor_medicamento": 1600.0
+            },
+            {
+                "nome": "Epiruva",
+                "principal_composto": "Epirubicin",
+                "laboratorio": "BioCure",
+                "descricao": "Tratamento de c\u00c3\u00a2ncer de mama",
+                "necessita_receita": true,
+                "valor_medicamento": 950.0
+            },
+            {
+                "nome": "TaxoDox",
+                "principal_composto": "Docetaxel",
+                "laboratorio": "PharmaLife",
+                "descricao": "Tratamento de c\u00c3\u00a2ncer de pr\u00c3\u00b3stata",
+                "necessita_receita": true,
+                "valor_medicamento": 1100.0
+            },
+            {
+                "nome": "Gemzarol",
+                "principal_composto": "Gemcitabine",
+                "laboratorio": "MediPharm",
+                "descricao": "Tratamento de c\u00c3\u00a2ncer de p\u00c3\u00a2ncreas",
+                "necessita_receita": true,
+                "valor_medicamento": 1450.0
+            },
+            {
+                "nome": "TopoCure",
+                "principal_composto": "Topotecan",
+                "laboratorio": "PharmaGen",
+                "descricao": "Tratamento de c\u00c3\u00a2ncer de colo do \u00c3\u00batero",
+                "necessita_receita": true,
+                "valor_medicamento": 990.0
+            },
+            {
+                "nome": "BleoCare",
+                "principal_composto": "Bleomycin",
+                "laboratorio": "BioCure",
+                "descricao": "Tratamento de linfoma de Hodgkin",
+                "necessita_receita": true,
+                "valor_medicamento": 750.0
+            },
+            {
+                "nome": "HerbaCalm",
+                "principal_composto": "Passiflora incarnata",
+                "laboratorio": "NaturPharma",
+                "descricao": "Auxilia no tratamento de ansiedade e ins\u00c3\u00b4nia",
+                "valor_medicamento": 45.0
+            },
+            {
+                "nome": "GinkgoVital",
+                "principal_composto": "Ginkgo biloba",
+                "laboratorio": "HerbLife",
+                "descricao": "Melhora a circula\u00c3\u00a7\u00c3\u00a3o cerebral e a mem\u00c3\u00b3ria",
+                "valor_medicamento": 30.0
+            },
+            {
+                "nome": "EchinaceaForce",
+                "principal_composto": "Echinacea purpurea",
+                "laboratorio": "NaturPharma",
+                "descricao": "Fortalece o sistema imunol\u00c3\u00b3gico",
+                "valor_medicamento": 28.0
+            },
+            {
+                "nome": "ValerianaRelax",
+                "principal_composto": "Valeriana officinalis",
+                "laboratorio": "HerbLife",
+                "descricao": "Promove relaxamento e al\u00c3\u00advio do estresse",
+                "valor_medicamento": 36.0
+            },
+            {
+                "nome": "CalendulaSkin",
+                "principal_composto": "Calendula officinalis",
+                "laboratorio": "NaturPharma",
+                "descricao": "Tratamento t\u00c3\u00b3pico para pele irritada e inflamada",
+                "valor_medicamento": 22.0
+            },
+            {
+                "nome": "CalendulaSkin",
+                "principal_composto": "Calendula officinalis",
+                "laboratorio": "NaturPharma",
+                "descricao": "Tratamento t\u00c3\u00b3pico para pele irritada e inflamada",
+                "valor_medicamento": 22.0
+            },
+            {
+                "nome": "CalendulaSkin",
+                "principal_composto": "Calendula officinalis",
+                "laboratorio": "NaturPharma",
+                "descricao": "Tratamento t\u00c3\u00b3pico para pele irritada e inflamada",
+                "valor_medicamento": 22.0
+            },
+            {
+                "nome": "CamomilaSerenity",
+                "principal_composto": "Matricaria chamomilla",
+                "laboratorio": "HerbLife",
+                "descricao": "Promove relaxamento e auxilia na digest\u00c3\u00a3o",
+                "valor_medicamento": 18.0
+            },
+            {
+                "nome": "TaxoDox",
+                "principal_composto": "Docetaxel",
+                "laboratorio": "PharmaLife",
+                "descricao": "Tratamento de c\u00c3\u00a2ncer de pr\u00c3\u00b3stata",
+                "necessita_receita": true,
+                "valor_medicamento": 1100.0
+            }
+        ],
+        "cliente": {
+            "cpf": "123.456.789-01",
+            "nome": "Alice Silva",
+            "data_nascimento": "15/03/1985"
+        },
+        "valor_total": 9705.177000000001
     }
 ]
