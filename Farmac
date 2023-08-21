@@ -42,7 +42,7 @@ class Vendas:
         self.cliente = cliente
         self.valor_total = valor_total
 
-    def to_dict(self):  # Indentação corrigida
+    def to_dict(self):
         produtos_vendidos_dict = [produto.__dict__ for produto in self.produtos_vendidos]
         cliente_dict = self.cliente.__dict__
         return {
