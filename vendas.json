@@ -1,5 +1,43 @@
 [
     {
-        "data_hora": "03031992",
+        "data_hora": "03032023",
         "produtos_vendidos": [
-            
+            {
+                "nome": "Oncotrex",
+                "principal_composto": "Methotrexate",
+                "laboratorio": "BioCure",
+                "descricao": "Tratamento de leucemia",
+                "necessita_receita": true,
+                "valor_medicamento": 850.0
+            },
+            {
+                "nome": "Platinox",
+                "principal_composto": "Cisplatin",
+                "laboratorio": "PharmaLife",
+                "descricao": "Tratamento de c\u00c3\u00a2ncer de pulm\u00c3\u00a3o",
+                "necessita_receita": true,
+                "valor_medicamento": 1800.0
+            },
+            {
+                "nome": "St. JohnsMood",
+                "principal_composto": "Hypericum perforatum",
+                "laboratorio": "HerbLife",
+                "descricao": "Melhora do humor e al\u00c3\u00advio de sintomas depressivos",
+                "valor_medicamento": 42.0
+            },
+            {
+                "nome": "MilkThistleDetox",
+                "principal_composto": "Silybum marianum",
+                "laboratorio": "NaturPharma",
+                "descricao": "Auxilia na desintoxica\u00c3\u00a7\u00c3\u00a3o do f\u00c3\u00adgado",
+                "valor_medicamento": 38.0
+            }
+        ],
+        "cliente": {
+            "cpf": "123.456.789-01",
+            "nome": "Alice Silva",
+            "data_nascimento": "15/03/1985"
+        },
+        "valor_total": 1990.1700000000003
+    }
+]

@@ -39,6 +39,16 @@ class Vendas:
         self.cliente = cliente
         self.valor_total = valor_total
 
+    def to_dict(self):  # Indentação corrigida
+        produtos_vendidos_dict = [produto.__dict__ for produto in self.produtos_vendidos]
+        cliente_dict = self.cliente.__dict__
+        return {
+            "data_hora": self.data_hora,
+            "produtos_vendidos": produtos_vendidos_dict,
+            "cliente": cliente_dict,
+            "valor_total": self.valor_total
+        }
+
 lista_clientes = []
 lista_medicamentos_quimio = []
 lista_medicamentos_fitoterapicos = []
@@ -53,7 +63,7 @@ def salvar_dados():
     with open('medicamentos_fitoterapicos.json', 'w') as arquivo:
         json.dump([med.__dict__ for med in lista_medicamentos_fitoterapicos], arquivo, indent=4)
     with open('vendas.json', 'w') as arquivo:
-        json.dump([venda.__dict__ for venda in lista_vendas], arquivo, indent=4)
+        json.dump([venda.to_dict() for venda in lista_vendas], arquivo, indent=4)
 
 # Função para carregar os dados de arquivos JSON
 def carregar_dados():
