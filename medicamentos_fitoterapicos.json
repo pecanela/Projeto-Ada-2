@@ -3,70 +3,70 @@
         "nome": "HerbaCalm",
         "principal_composto": "Passiflora incarnata",
         "laboratorio": "NaturPharma",
-        "descricao": "Auxilia no tratamento de ansiedade e insônia",
+        "descricao": "Auxilia no tratamento de ansiedade e ins\u00c3\u00b4nia",
         "valor_medicamento": 45.0
     },
     {
         "nome": "GinkgoVital",
         "principal_composto": "Ginkgo biloba",
         "laboratorio": "HerbLife",
-        "descricao": "Melhora a circulação cerebral e a memória",
+        "descricao": "Melhora a circula\u00c3\u00a7\u00c3\u00a3o cerebral e a mem\u00c3\u00b3ria",
         "valor_medicamento": 30.0
     },
     {
         "nome": "EchinaceaForce",
         "principal_composto": "Echinacea purpurea",
         "laboratorio": "NaturPharma",
-        "descricao": "Fortalece o sistema imunológico",
+        "descricao": "Fortalece o sistema imunol\u00c3\u00b3gico",
         "valor_medicamento": 28.0
     },
     {
         "nome": "ValerianaRelax",
         "principal_composto": "Valeriana officinalis",
         "laboratorio": "HerbLife",
-        "descricao": "Promove relaxamento e alívio do estresse",
+        "descricao": "Promove relaxamento e al\u00c3\u00advio do estresse",
         "valor_medicamento": 36.0
     },
     {
         "nome": "CalendulaSkin",
         "principal_composto": "Calendula officinalis",
         "laboratorio": "NaturPharma",
-        "descricao": "Tratamento tópico para pele irritada e inflamada",
+        "descricao": "Tratamento t\u00c3\u00b3pico para pele irritada e inflamada",
         "valor_medicamento": 22.0
     },
     {
         "nome": "CamomilaSerenity",
         "principal_composto": "Matricaria chamomilla",
         "laboratorio": "HerbLife",
-        "descricao": "Promove relaxamento e auxilia na digestão",
+        "descricao": "Promove relaxamento e auxilia na digest\u00c3\u00a3o",
         "valor_medicamento": 18.0
     },
     {
         "nome": "HawthornHeart",
         "principal_composto": "Crataegus monogyna",
         "laboratorio": "NaturPharma",
-        "descricao": "Suporte cardiovascular e controle da pressão arterial",
+        "descricao": "Suporte cardiovascular e controle da press\u00c3\u00a3o arterial",
         "valor_medicamento": 32.0
     },
     {
         "nome": "SawPalmettoPlus",
         "principal_composto": "Serenoa repens",
         "laboratorio": "HerbLife",
-        "descricao": "Promove a saúde da próstata",
+        "descricao": "Promove a sa\u00c3\u00bade da pr\u00c3\u00b3stata",
         "valor_medicamento": 26.0
     },
     {
         "nome": "MilkThistleDetox",
         "principal_composto": "Silybum marianum",
         "laboratorio": "NaturPharma",
-        "descricao": "Auxilia na desintoxicação do fígado",
+        "descricao": "Auxilia na desintoxica\u00c3\u00a7\u00c3\u00a3o do f\u00c3\u00adgado",
         "valor_medicamento": 38.0
     },
     {
         "nome": "St. JohnsMood",
         "principal_composto": "Hypericum perforatum",
         "laboratorio": "HerbLife",
-        "descricao": "Melhora do humor e alívio de sintomas depressivos",
+        "descricao": "Melhora do humor e al\u00c3\u00advio de sintomas depressivos",
         "valor_medicamento": 42.0
     }
 ]

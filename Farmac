@@ -63,6 +63,8 @@ def carregar_dados():
             lista_clientes = [Clientes(**cliente) for cliente in json.load(arquivo)]
     except FileNotFoundError:
         pass
+    except json.JSONDecodeError as e:
+        print(f"Erro ao decodificar JSON de clientes: {e}")
 
     try:
         with open('medicamentos_quimio.json', 'r') as arquivo:
@@ -70,6 +72,8 @@ def carregar_dados():
             lista_medicamentos_quimio = [MedicamentosQuimioterapicos(**med) for med in json.load(arquivo)]
     except FileNotFoundError:
         pass
+    except json.JSONDecodeError as e:
+        print(f"Erro ao decodificar JSON de medicamentos quimioterápicos: {e}")
 
     try:
         with open('medicamentos_fitoterapicos.json', 'r') as arquivo:
@@ -77,6 +81,8 @@ def carregar_dados():
             lista_medicamentos_fitoterapicos = [MedicamentosFitoterapicos(**med) for med in json.load(arquivo)]
     except FileNotFoundError:
         pass
+    except json.JSONDecodeError as e:
+        print(f"Erro ao decodificar JSON de medicamentos fitoterápicos: {e}")
 
     try:
         with open('vendas.json', 'r') as arquivo:
@@ -84,6 +90,8 @@ def carregar_dados():
             lista_vendas = [Vendas(**venda) for venda in json.load(arquivo)]
     except FileNotFoundError:
         pass
+    except json.JSONDecodeError as e:
+        print(f"Erro ao decodificar JSON de vendas: {e}")
 
 def cadastrar_cliente(cpf, nome, data_nascimento):
     cliente = Clientes(cpf, nome, data_nascimento)
@@ -104,17 +112,38 @@ def cadastrar_medicamento_fitoterapico(nome, principal_composto, laboratorio, de
 
 def efetuar_venda(data_hora, produtos_vendidos, cliente):
     valor_total = calcular_valor_total(produtos_vendidos, cliente)
+    aplicar_desconto = True
+    
+    if cliente_idoso(cliente):
+        valor_total *= 0.8  # Desconto de 20% para idosos
+        aplicar_desconto = False
+    elif valor_total > 150:
+        valor_total *= 0.9  # Desconto de 10% para compras acima de R$150
+        
+    print("Itens vendidos:")
+    for produto in produtos_vendidos:
+        print(f"Nome: {produto.nome} | Valor: R$ {produto.valor_medicamento:.2f}")
+        if isinstance(produto, MedicamentosQuimioterapicos) and produto.necessita_receita:
+            receita_verificada = input(f"O atendente verificou a receita para o medicamento {produto.nome}? (S/N): ").upper() == "S"
+            if not receita_verificada:
+                aplicar_desconto = False
+    
+    if aplicar_desconto:
+        print("Desconto aplicado.")
+        valor_total *= 0.9  # Desconto adicional de 10% (apenas se não houver conflito com outros descontos)
+    
     venda = Vendas(data_hora, produtos_vendidos, cliente, valor_total)
     lista_vendas.append(venda)
     print("Venda efetuada com sucesso.")
+    salvar_dados()
 
 def calcular_valor_total(produtos_vendidos, cliente):
     valor_total = sum(produto.valor_medicamento for produto in produtos_vendidos)
-    if cliente_idoso(cliente) or valor_total > 150:
-        if cliente_idoso(cliente):
-            valor_total *= 0.8  # Desconto de 20% para idosos
-        else:
-            valor_total *= 0.9  # Desconto de 10% para compras acima de R$150
+    
+    if cliente_idoso(cliente):
+        valor_total *= 0.8  # Desconto de 20% para idosos
+    elif valor_total > 150:
+        valor_total *= 0.9  # Desconto de 10% para compras acima de R$150
     return valor_total
 
 def cliente_idoso(cliente):
@@ -211,8 +240,27 @@ while True:
         salvar_dados()
     elif opcao == "4":
         data_hora = input("Data e hora da venda (DD/MM/AAAA HH:MM): ")
-        # Coletar produtos vendidos e cliente
-        produtos_vendidos = []  # Preencha com os produtos vendidos
+        
+        produtos_vendidos = []  # Lista para armazenar os produtos vendidos
+        
+        # Mostrar lista de medicamentos
+        print("Lista de Medicamentos:")
+        for i, medicamento in enumerate(lista_medicamentos_quimio + lista_medicamentos_fitoterapicos):
+            print(f"{i + 1}. {medicamento.nome}")
+        
+        while True:
+            escolha_medicamento = input("Digite o número do medicamento que o cliente deseja (ou 0 para finalizar): ")
+            if escolha_medicamento == "0":
+                break
+            try:
+                index_medicamento = int(escolha_medicamento) - 1
+                if 0 <= index_medicamento < len(lista_medicamentos_quimio + lista_medicamentos_fitoterapicos):
+                    produtos_vendidos.append(lista_medicamentos_quimio[index_medicamento] if index_medicamento < len(lista_medicamentos_quimio) else lista_medicamentos_fitoterapicos[index_medicamento - len(lista_medicamentos_quimio)])
+                else:
+                    print("Escolha inválida.")
+            except ValueError:
+                print("Escolha inválida.")
+        
         cpf_cliente = input("CPF do cliente: ")
         cliente = None
         for c in lista_clientes:
