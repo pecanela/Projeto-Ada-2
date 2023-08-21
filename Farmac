@@ -1,13 +1,15 @@
 import json
 
-
+# Definição das classes de entidades
 class Clientes:
+    # Construtor da classe de clientes
     def __init__(self, cpf, nome, data_nascimento):
         self.cpf = cpf
         self.nome = nome
         self.data_nascimento = data_nascimento
 
 class MedicamentosQuimioterapicos:
+    # Construtor da classe de medicamentos quimioterápicos
     def __init__(self, nome, principal_composto, laboratorio, descricao, necessita_receita, valor_medicamento):
         self.nome = nome
         self.principal_composto = principal_composto
@@ -17,6 +19,7 @@ class MedicamentosQuimioterapicos:
         self.valor_medicamento = valor_medicamento
 
 class MedicamentosFitoterapicos:
+    # Construtor da classe de medicamentos fitoterápicos
     def __init__(self, nome, principal_composto, laboratorio, descricao, valor_medicamento):
         self.nome = nome
         self.principal_composto = principal_composto
@@ -49,12 +52,13 @@ class Vendas:
             "valor_total": self.valor_total
         }
 
+# Listas vazias para armazenar os dados
 lista_clientes = []
 lista_medicamentos_quimio = []
 lista_medicamentos_fitoterapicos = []
 lista_vendas = []
 
-
+# Função para salvar os dados em arquivos JSON
 def salvar_dados():
     with open('clientes.json', 'w') as arquivo:
         json.dump([cliente.__dict__ for cliente in lista_clientes], arquivo, indent=4)
@@ -103,23 +107,30 @@ def carregar_dados():
     except json.JSONDecodeError as e:
         print(f"Erro ao decodificar JSON de vendas: {e}")
 
+# Funções para cadastrar dados
 def cadastrar_cliente(cpf, nome, data_nascimento):
     cliente = Clientes(cpf, nome, data_nascimento)
     lista_clientes.append(cliente)
     print("Cliente cadastrado com sucesso.")
 
+
+# cria um novo objeto MedicamentosQuimioterapicos e o adiciona à lista
 def cadastrar_medicamento_quimioterapico(nome, principal_composto, laboratorio, descricao, necessita_receita):
     valor_medicamento = float(input("Valor do medicamento: "))
     medicamento = MedicamentosQuimioterapicos(nome, principal_composto, laboratorio, descricao, necessita_receita, valor_medicamento)
     lista_medicamentos_quimio.append(medicamento)
     print("Medicamento quimioterápico cadastrado com sucesso.")
 
+
+# cria um novo objeto MedicamentosFitoterapicos e o adiciona à lista
 def cadastrar_medicamento_fitoterapico(nome, principal_composto, laboratorio, descricao):
     valor_medicamento = float(input("Valor do medicamento: "))
     medicamento = MedicamentosFitoterapicos(nome, principal_composto, laboratorio, descricao, valor_medicamento)
     lista_medicamentos_fitoterapicos.append(medicamento)
     print("Medicamento fitoterápico cadastrado com sucesso.")
 
+
+# realiza uma venda, calcula descontos, cria um objeto Vendas e o adiciona à lista
 def efetuar_venda(data_hora, produtos_vendidos, cliente):
     valor_total = calcular_valor_total(produtos_vendidos, cliente)
     aplicar_desconto = True
@@ -147,6 +158,7 @@ def efetuar_venda(data_hora, produtos_vendidos, cliente):
     print("Venda efetuada com sucesso.")
     salvar_dados()
 
+#calcula o valor total de uma venda considerando descontos
 def calcular_valor_total(produtos_vendidos, cliente):
     valor_total = sum(produto.valor_medicamento for produto in produtos_vendidos)
     
@@ -210,13 +222,19 @@ def obter_remedio_mais_vendido():
     return remedio_mais_vendido
 
 
+# Carrega os dados do sistema a partir dos arquivos JSON
 carregar_dados()
 
+
+
+
+
+# Loop principal para interação com o usuário
 while True:
-    print("Menu:")
-    print("1. Cadastrar Cliente")
-    print("2. Cadastrar Medicamento Quimioterápico")
-    print("3. Cadastrar Medicamento Fitoterápico")
+    print("Menu:") # exibe as opções do menu
+    print("1. Cadastrar Cliente") # cadastra um novo cliente
+    print("2. Cadastrar Medicamento Quimioterápico") # cadastra um novo medicamento quimioterápico
+    print("3. Cadastrar Medicamento Fitoterápico") # cadastra um novo medicamento Fitoterápico
     print("4. Efetuar Venda")
     print("5. Gerar Relatório de Listagem de Clientes")
     print("6. Gerar Relatório de Listagem de Medicamentos")
@@ -292,6 +310,7 @@ while True:
     elif opcao == "9":
         gerar_relatorio_estatisticas()
     elif opcao == "0":
+        # Salva os dados e encerra o programa
         salvar_dados()
         break
     else:
