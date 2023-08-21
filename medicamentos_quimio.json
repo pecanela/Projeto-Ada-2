@@ -1,0 +1,82 @@
+[
+    {
+        "nome": "Cytovin",
+        "principal_composto": "Fluorouracil",
+        "laboratorio": "MediPharm",
+        "descricao": "Tratamento de câncer de cólon",
+        "necessita_receita": true,
+        "valor_medicamento": 1200.0
+    },
+    {
+        "nome": "Oncotrex",
+        "principal_composto": "Methotrexate",
+        "laboratorio": "BioCure",
+        "descricao": "Tratamento de leucemia",
+        "necessita_receita": true,
+        "valor_medicamento": 850.0
+    },
+    {
+        "nome": "Platinox",
+        "principal_composto": "Cisplatin",
+        "laboratorio": "PharmaLife",
+        "descricao": "Tratamento de câncer de pulmão",
+        "necessita_receita": true,
+        "valor_medicamento": 1800.0
+    },
+    {
+        "nome": "VincaTreat",
+        "principal_composto": "Vincristine",
+        "laboratorio": "MediPharm",
+        "descricao": "Tratamento de linfoma",
+        "necessita_receita": true,
+        "valor_medicamento": 1300.0
+    },
+    {
+        "nome": "CarboCell",
+        "principal_composto": "Carboplatin",
+        "laboratorio": "PharmaGen",
+        "descricao": "Tratamento de câncer de ovário",
+        "necessita_receita": true,
+        "valor_medicamento": 1600.0
+    },
+    {
+        "nome": "Epiruva",
+        "principal_composto": "Epirubicin",
+        "laboratorio": "BioCure",
+        "descricao": "Tratamento de câncer de mama",
+        "necessita_receita": true,
+        "valor_medicamento": 950.0
+    },
+    {
+        "nome": "TaxoDox",
+        "principal_composto": "Docetaxel",
+        "laboratorio": "PharmaLife",
+        "descricao": "Tratamento de câncer de próstata",
+        "necessita_receita": true,
+        "valor_medicamento": 1100.0
+    },
+    {
+        "nome": "Gemzarol",
+        "principal_composto": "Gemcitabine",
+        "laboratorio": "MediPharm",
+        "descricao": "Tratamento de câncer de pâncreas",
+        "necessita_receita": true,
+        "valor_medicamento": 1450.0
+    },
+    {
+        "nome": "TopoCure",
+        "principal_composto": "Topotecan",
+        "laboratorio": "PharmaGen",
+        "descricao": "Tratamento de câncer de colo do útero",
+        "necessita_receita": true,
+        "valor_medicamento": 990.0
+    },
+    {
+        "nome": "BleoCare",
+        "principal_composto": "Bleomycin",
+        "laboratorio": "BioCure",
+        "descricao": "Tratamento de linfoma de Hodgkin",
+        "necessita_receita": true,
+        "valor_medicamento": 750.0
+    }
+]

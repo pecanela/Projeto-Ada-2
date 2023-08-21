@@ -1,0 +1,52 @@
+[
+    {
+        "cpf": "123.456.789-01",
+        "nome": "Alice Silva",
+        "data_nascimento": "15/03/1985"
+    },
+    {
+        "cpf": "987.654.321-09",
+        "nome": "Bruno Oliveira",
+        "data_nascimento": "21/07/1992"
+    },
+    {
+        "cpf": "456.789.123-45",
+        "nome": "Carla Souza",
+        "data_nascimento": "04/10/1980"
+    },
+    {
+        "cpf": "555.444.333-22",
+        "nome": "David Santos",
+        "data_nascimento": "28/05/1988"
+    },
+    {
+        "cpf": "888.777.666-55",
+        "nome": "Elena Pereira",
+        "data_nascimento": "11/07/1975"
+    },
+    {
+        "cpf": "222.333.444-55",
+        "nome": "Fernanda Ribeiro",
+        "data_nascimento": "09/11/1989"
+    },
+    {
+        "cpf": "999.888.777-66",
+        "nome": "Gabriel Ferreira",
+        "data_nascimento": "30/06/2000"
+    },
+    {
+        "cpf": "444.555.666-88",
+        "nome": "Hugo Alves",
+        "data_nascimento": "18/08/1970"
+    },
+    {
+        "cpf": "777.888.999-00",
+        "nome": "Isabela Santos",
+        "data_nascimento": "22/02/1987"
+    },
+    {
+        "cpf": "123.987.456-65",
+        "nome": "Jo\u00c3\u00a3o Oliveira",
+        "data_nascimento": "12/05/1995"
+    }
+]

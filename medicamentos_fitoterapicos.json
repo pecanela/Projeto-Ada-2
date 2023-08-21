@@ -1,0 +1,72 @@
+[
+    {
+        "nome": "HerbaCalm",
+        "principal_composto": "Passiflora incarnata",
+        "laboratorio": "NaturPharma",
+        "descricao": "Auxilia no tratamento de ansiedade e insônia",
+        "valor_medicamento": 45.0
+    },
+    {
+        "nome": "GinkgoVital",
+        "principal_composto": "Ginkgo biloba",
+        "laboratorio": "HerbLife",
+        "descricao": "Melhora a circulação cerebral e a memória",
+        "valor_medicamento": 30.0
+    },
+    {
+        "nome": "EchinaceaForce",
+        "principal_composto": "Echinacea purpurea",
+        "laboratorio": "NaturPharma",
+        "descricao": "Fortalece o sistema imunológico",
+        "valor_medicamento": 28.0
+    },
+    {
+        "nome": "ValerianaRelax",
+        "principal_composto": "Valeriana officinalis",
+        "laboratorio": "HerbLife",
+        "descricao": "Promove relaxamento e alívio do estresse",
+        "valor_medicamento": 36.0
+    },
+    {
+        "nome": "CalendulaSkin",
+        "principal_composto": "Calendula officinalis",
+        "laboratorio": "NaturPharma",
+        "descricao": "Tratamento tópico para pele irritada e inflamada",
+        "valor_medicamento": 22.0
+    },
+    {
+        "nome": "CamomilaSerenity",
+        "principal_composto": "Matricaria chamomilla",
+        "laboratorio": "HerbLife",
+        "descricao": "Promove relaxamento e auxilia na digestão",
+        "valor_medicamento": 18.0
+    },
+    {
+        "nome": "HawthornHeart",
+        "principal_composto": "Crataegus monogyna",
+        "laboratorio": "NaturPharma",
+        "descricao": "Suporte cardiovascular e controle da pressão arterial",
+        "valor_medicamento": 32.0
+    },
+    {
+        "nome": "SawPalmettoPlus",
+        "principal_composto": "Serenoa repens",
+        "laboratorio": "HerbLife",
+        "descricao": "Promove a saúde da próstata",
+        "valor_medicamento": 26.0
+    },
+    {
+        "nome": "MilkThistleDetox",
+        "principal_composto": "Silybum marianum",
+        "laboratorio": "NaturPharma",
+        "descricao": "Auxilia na desintoxicação do fígado",
+        "valor_medicamento": 38.0
+    },
+    {
+        "nome": "St. JohnsMood",
+        "principal_composto": "Hypericum perforatum",
+        "laboratorio": "HerbLife",
+        "descricao": "Melhora do humor e alívio de sintomas depressivos",
+        "valor_medicamento": 42.0
+    }
+]
